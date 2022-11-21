@@ -4,7 +4,6 @@ using UnityEngine;
 public class AnimatorParamsChanger : MonoBehaviour
 {
     private Animator _thisAnimator;
-    private bool _isBlinking = false;
 
     private void Awake()
     {
@@ -15,8 +14,7 @@ public class AnimatorParamsChanger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            _isBlinking = !_isBlinking;
-            _thisAnimator.SetBool("ButtonPressedBool", _isBlinking);
+            _thisAnimator.SetTrigger("ButtonPressedTrigger");
         }
     }
 }
